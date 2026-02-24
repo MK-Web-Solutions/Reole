@@ -1,11 +1,9 @@
 import SelectedWorks from './SelectedWorks';
-import Footer from './Footer';
-import Header from './Header';
+import { Link } from "react-router-dom";
 
 const HomePage: React.FC = () => {
   return (
     <div className="w-full relative">
-      <Header />
 
       {/* Hero Section */}
       <section className="relative w-full h-[150vh]">
@@ -15,13 +13,7 @@ const HomePage: React.FC = () => {
           alt="hero"
         />
 
-        {/* Logo */}
-        <img 
-          src="/logo.png"
-          className="absolute w-[185px] h-[201px] z-10" 
-          style={{ left: 'calc(50% - 92.5px + 0.5px)', top: '5%' }}
-          alt="logo"
-        />
+ 
 
         {/* Overlay Text */}
         <h1
@@ -77,7 +69,6 @@ const HomePage: React.FC = () => {
       </section>
 
       <SelectedWorks />
-      <Footer />
     </div>
   );
 };
