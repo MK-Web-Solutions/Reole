@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import GalleryPage from './Gallery';
 import VideosPage from './Videos';
-import ContactPage from './Contact';
 import CommunityPage from './Community';
 import SongPage from './Songs';
 
@@ -13,7 +12,6 @@ const AppRoutes = () => (
     <Route path="/songs" element={<SongPage />} />
     <Route path="/gallery" element={<GalleryPage />} />
     <Route path="/videos" element={<VideosPage />} />
-    <Route path="/contact" element={<ContactPage />} />
     <Route path="/community" element={<CommunityPage />} />
   </Routes>
 );

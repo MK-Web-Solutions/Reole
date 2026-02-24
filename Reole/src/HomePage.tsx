@@ -1,5 +1,4 @@
 import SelectedWorks from './SelectedWorks';
-import { Link } from "react-router-dom";
 
 const HomePage: React.FC = () => {
   return (

@@ -8,55 +8,50 @@ const VideoCard = ({
   image: string;
 }) => {
   return (
-    <div className="w-[152px] h-[202px] bg-[rgba(255,255,255,0.08)] rounded-md flex-shrink-0 p-2 flex flex-col">
-      <div className="w-[128px] h-[128px] rounded-md overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover"
-        />
+    <div className="flex-shrink-0 w-[220px] sm:w-[180px] md:w-[200px] lg:w-[220px] xl:w-[240px] 
+                    bg-[#1D2124] hover:bg-[rgba(255,255,255,0.08)] 
+                    transition-all duration-200 transform hover:scale-105 
+                    rounded-md p-2 flex flex-col cursor-pointer">
+      <div className="w-full aspect-square rounded-md overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
-      <div className="mt-2 text-white font-bold text-[14px] leading-[16px]">
-        {title}
-      </div>
-      <div className="text-[#B2B2B2] text-[12px] leading-[14px]">{date}</div>
+      <div className="mt-2 text-white font-bold text-sm line-clamp-2">{title}</div>
+      <div className="text-[#B2B2B2] text-xs">{date}</div>
     </div>
   );
 };
-
 const Videos = () => {
   const performances = [
     { title: "Performance 1", date: "2026", image: "/performance1.png" },
     { title: "Performance 2", date: "2026", image: "/performance2.png" },
     { title: "Performance 3", date: "2026", image: "/performance2.png" },
+    { title: "Performance 4", date: "2026", image: "/performance1.png" },
   ];
 
   const musicVideos = [
     { title: "Video 1", date: "2026", image: "/performance1.png" },
     { title: "Video 2", date: "2026", image: "/performance2.png" },
     { title: "Video 3", date: "2026", image: "/performance1.png" },
+    { title: "Video 4", date: "2026", image: "/performance2.png" },
   ];
 
   const scores = [
     { title: "Score 1", date: "2026", image: "/performance1.png" },
     { title: "Score 2", date: "2026", image: "/performance2.png" },
     { title: "Score 3", date: "2026", image: "/performance1.png" },
+    { title: "Score 4", date: "2026", image: "/performance2.png" },
   ];
 
-  const renderSection = (
-    title: string,
-    videos: typeof performances
-  ) => (
-    <section className="flex flex-col gap-2">
-      <h2 className="text-white font-bold text-[20px] leading-[24px]">{title}</h2>
-      <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-[repeat(auto-fit,minmax(152px,1fr))] md:gap-6 md:overflow-visible">
-        {videos.map((video, i) => (
-          <VideoCard key={i} {...video} />
-        ))}
-      </div>
-    </section>
-  );
-
+const renderSection = (title: string, videos: typeof performances) => (
+  <section className="flex flex-col gap-4">
+    <h2 className="text-white font-bold text-xl">{title}</h2>
+    <div className="flex gap-6 overflow-x-auto scrollbar-hide py-2 px-2 md:px-0">
+      {videos.map((video, i) => (
+        <VideoCard key={i} {...video} />
+      ))}
+    </div>
+  </section>
+);
   return (
     <div className="bg-[#1D2124] min-h-screen text-white px-4 pt-[160px] max-w-7xl mx-auto flex flex-col gap-12">
       {renderSection("Performances", performances)}
