@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Default link color */
+a {
+  color: #2C2C2C; /* dark grey */
+  text-decoration: none; /* remove underline if you want */
+  transition: color 0.2s;
+}
+
+/* Hover state */
+a:hover {
+  color: #E1306C; /* pink / any accent color */
+}

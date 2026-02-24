@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 type Song = {
   name: string;
   date: string;
@@ -17,22 +20,34 @@ const songsRow2: Song[] = [
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black py-16 flex flex-col items-center text-white">
+<footer className="w-full py-16 flex flex-col items-center" style={{ backgroundColor: '#E4E0E0' }}>
       {/* Scrolling Carousels */}
-      <div className="w-full overflow-hidden mb-12 bg-black">
+      <div className="w-full overflow-hidden mb-12">
         {/* Row 1 - scroll left */}
-        <div className="flex animate-marquee whitespace-nowrap mb-4 text-white">
+        <div
+          className="flex animate-marquee whitespace-nowrap"
+          style={{ backgroundColor: 'black', color: 'white' }}
+        >
           {songsRow1.concat(songsRow1).map((song, i) => (
-            <div key={i} className="inline-block px-16 font-futura font-bold text-[30px]">
+            <div
+              key={i}
+              className="inline-block px-16 font-futura font-bold text-[30px]"
+            >
               {song.name} COMING SOON. {song.date}
             </div>
           ))}
         </div>
 
         {/* Row 2 - scroll right */}
-        <div className="flex animate-marquee-reverse whitespace-nowrap text-white">
+        <div
+          className="flex animate-marquee-reverse whitespace-nowrap"
+          style={{ backgroundColor: 'black', color: 'white' }}
+        >
           {songsRow2.concat(songsRow2).map((song, i) => (
-            <div key={i} className="inline-block px-16 font-futura font-bold text-[30px]">
+            <div
+              key={i}
+              className="inline-block px-16 font-futura font-bold text-[30px]"
+            >
               {song.name} COMING SOON. {song.date}
             </div>
           ))}
@@ -41,70 +56,85 @@ const Footer = () => {
 
       {/* Logo */}
       <img src="/logo.png" alt="Logo" className="w-[175px] h-auto mb-6" />
+<div className="flex space-x-6 mb-12">
+  {/* TikTok */}
+  <a
+    href="https://www.tiktok.com/@yourusername"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-20 h-20 rounded-full bg-[#222326] flex items-center justify-center hover:bg-gray-700 transition"
+  >
+    <FontAwesomeIcon icon={faTiktok} className="w-10 h-10 text-white" />
+  </a>
 
-      {/* Social Media Buttons */}
-      <div className="flex space-x-4 mb-12">
-        {['/icon1.png','/icon2.png','/icon3.png'].map((icon, i) => (
-          <a key={i} href="#" className="w-9 h-9 rounded-full bg-[#222326] flex items-center justify-center hover:bg-gray-700 transition">
-            <img src={icon} alt={`Social ${i}`} className="w-4 h-4"/>
-          </a>
-        ))}
-      </div>
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/yourusername"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-20 h-20 rounded-full bg-[#222326] flex items-center justify-center hover:bg-gray-700 transition"
+  >
+    <FontAwesomeIcon icon={faInstagram} className="w-10 h-10 text-white" />
+  </a>
+</div>
 
-      {/* Contact Form */}
-      <section className="w-full max-w-[400px] bg-white p-6 rounded-md border border-gray-300 mb-8 text-black">
-        <h2 className="text-2xl font-bold mb-4 text-center">Contact Me</h2>
-        <form 
-          id="contact-form" 
-          action="https://formspree.io/f/xldnekkn" 
-          method="POST" 
-          className="flex flex-col gap-4"
-        >
-          <div className="flex flex-col">
-            <label htmlFor="name" className="font-medium mb-1">Name <span className="text-red-500">*</span></label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              placeholder="Your name" 
-              required 
-              className="border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
+{/* Contact Form */}
+<section className="w-full max-w-[333px] bg-white p-3 rounded-[10px] border border-[#D9D9D9] mb-8">
+  <h2 className="text-center font-bold text-sm mb-3">Contact Me</h2>
+  <form 
+    id="contact-form" 
+    action="https://formspree.io/f/xldnekkn" 
+    method="POST" 
+    className="flex flex-col gap-3"
+  >
+    {/* Name */}
+    <div className="flex flex-col gap-[4px]">
+      <label htmlFor="name" className="text-[9px] text-[#1E1E1E]">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required
+        className="w-full h-[22px] px-2 py-[6px] border border-[#D9D9D9] rounded-[4px] text-[9px] text-[#B3B3B3]"
+      />
+    </div>
 
-          <div className="flex flex-col">
-            <label htmlFor="email" className="font-medium mb-1">Email <span className="text-red-500">*</span></label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              placeholder="your.email@example.com" 
-              required 
-              className="border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
+    {/* Email */}
+    <div className="flex flex-col gap-[4px]">
+      <label htmlFor="email" className="text-[9px] text-[#1E1E1E]">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="your.email@example.com"
+        required
+        className="w-full h-[22px] px-2 py-[6px] border border-[#D9D9D9] rounded-[4px] text-[9px] text-[#B3B3B3]"
+      />
+    </div>
 
-          <div className="flex flex-col">
-            <label htmlFor="message" className="font-medium mb-1">Message <span className="text-red-500">*</span></label>
-            <textarea 
-              id="message" 
-              name="message" 
-              rows={5} 
-              placeholder="Write your message here..." 
-              required 
-              className="border border-gray-300 rounded px-3 py-2 resize-none"
-            ></textarea>
-          </div>
+    {/* Message */}
+    <div className="flex flex-col gap-[4px]">
+      <label htmlFor="message" className="text-[9px] text-[#1E1E1E]">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows={3}
+        placeholder="Write your message here..."
+        required
+        className="w-full px-2 py-[6px] border border-[#D9D9D9] rounded-[4px] text-[9px] text-[#B3B3B3] resize-none h-[43px]"
+      ></textarea>
+    </div>
 
-          <button 
-            type="submit" 
-            className="bg-[#2F3539] text-white py-2 rounded hover:bg-gray-800 transition"
-          >
-            Send Message
-          </button>
-        </form>
-      </section>
-
+    {/* Submit */}
+    <button
+      type="submit"
+      className="w-full bg-[#2C2C2C] text-white text-[9px] py-1 rounded-[4px] hover:bg-gray-800 transition mt-1"
+    >
+      Send Message
+    </button>
+  </form>
+</section>
       {/* CSS for marquee animations */}
       <style>{`
         @keyframes marquee {

@@ -1,4 +1,3 @@
-import React from "react";
 
 interface Song {
   id: number;
@@ -22,7 +21,7 @@ const albums: Song[] = [
 
 const Songs = () => {
   return (
-    <div className="w-full bg-gray-900 text-white pt-[280px] px-8">
+    <div className="w-full bg-gray-900 text-white pt-[280px] px-8" style={{ backgroundColor: '#E4E0E0' }}>
 {/* Singles - vertical list */}
 <h1 className="text-2xl font-bold mb-4">Singles</h1>
 <div className="flex flex-col gap-4 mb-12">

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SelectedWorks = () => {
   return (
     <section className="relative w-full bg-[#1D2124] flex justify-center py-16">
@@ -54,8 +56,13 @@ const SelectedWorks = () => {
         <div className="absolute top-[541px] left-1/2 translate-x-[245px] 
                         w-[138px] h-[24px] bg-[#1E2225] rounded-[5px] 
                         flex items-center justify-center text-white text-[12px] font-medium">
-          View all Songs
-        </div>
+  <Link
+    to="/songs"
+    className="px-4 py-2 bg-[#2C2C2C] text-white rounded hover:bg-gray-800 transition text-[8.55px]"
+  >
+    View All Songs
+  </Link>
+          </div>
 
 
 
@@ -82,8 +89,13 @@ const SelectedWorks = () => {
     </p>
     {/* Button aligned right */}
     <div className="mt-2 self-end w-[89px] h-[15px] bg-[#1E2225] rounded-[5px] flex items-center justify-center text-white text-[12px] font-medium">
-      View all Scores
-    </div>
+  <Link
+    to="/videos"
+    className="px-4 py-2 bg-[#2C2C2C] text-white rounded hover:bg-gray-800 transition text-[8.55px]"
+  >
+    View All Scores
+  </Link>
+      </div>
   </div>
 
   {/* Right Video */}
@@ -103,7 +115,12 @@ const SelectedWorks = () => {
     </p>
     {/* Button aligned right */}
     <div className="mt-2 self-end w-[130px] h-[16px] bg-[#1E2225] rounded-[5px] flex items-center justify-center text-white text-[12px] font-medium">
-      View all Performances
+    <Link
+    to="/videos"
+    className="px-4 py-2 bg-[#2C2C2C] text-white rounded hover:bg-gray-800 transition text-[8.55px]"
+  >
+    View All Performances
+  </Link>
     </div>
   </div>
 
