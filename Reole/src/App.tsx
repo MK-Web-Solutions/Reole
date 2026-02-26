@@ -6,11 +6,15 @@ import AppRoutes from "./router";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="w-full relative">
-        <Header />
-        <AppRoutes />
-        <Footer />
-      </div>
+<div className="w-full min-h-screen">
+  <Header />
+
+  <main className="px-6 md:px-12">
+    <AppRoutes />
+  </main>
+
+  <Footer />
+</div>
     </BrowserRouter>
   );
 };

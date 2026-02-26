@@ -58,7 +58,7 @@ const SelectedWorks = () => {
                         flex items-center justify-center text-white text-[12px] font-medium">
   <Link
     to="/songs"
-    className="px-4 py-2 bg-[#2C2C2C] text-white rounded hover:bg-gray-800 transition text-[8.55px]"
+    className="px-4 py-2  text-white rounded hover:bg-gray-800 transition text-[8.55px]"
   >
     View All Songs
   </Link>
@@ -91,7 +91,7 @@ const SelectedWorks = () => {
     <div className="mt-2 self-end w-[89px] h-[15px] bg-[#1E2225] rounded-[5px] flex items-center justify-center text-white text-[12px] font-medium">
   <Link
     to="/videos"
-    className="px-4 py-2 bg-[#2C2C2C] text-white rounded hover:bg-gray-800 transition text-[8.55px]"
+    className="px-4 py-2 text-white rounded hover:bg-gray-800 transition text-[8.55px]"
   >
     View All Scores
   </Link>
@@ -117,7 +117,7 @@ const SelectedWorks = () => {
     <div className="mt-2 self-end w-[130px] h-[16px] bg-[#1E2225] rounded-[5px] flex items-center justify-center text-white text-[12px] font-medium">
     <Link
     to="/videos"
-    className="px-4 py-2 bg-[#2C2C2C] text-white rounded hover:bg-gray-800 transition text-[8.55px]"
+    className="px-4 py-2 text-white rounded hover:bg-gray-800 transition text-[8.55px]"
   >
     View All Performances
   </Link>

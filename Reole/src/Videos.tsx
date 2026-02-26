@@ -8,10 +8,12 @@ const VideoCard = ({
   image: string;
 }) => {
   return (
-    <div className="flex-shrink-0 w-[220px] sm:w-[180px] md:w-[200px] lg:w-[220px] xl:w-[240px] 
-                    bg-[#1D2124] hover:bg-[rgba(255,255,255,0.08)] 
-                    transition-all duration-200 transform hover:scale-105 
-                    rounded-md p-2 flex flex-col cursor-pointer">
+    <div
+      className="flex-shrink-0 w-[220px] sm:w-[180px] md:w-[200px] lg:w-[220px] xl:w-[240px] 
+                 bg-[#1D2124] hover:bg-[rgba(255,255,255,0.08)] 
+                 transition-all duration-200 transform hover:scale-105 
+                 rounded-md p-2 flex flex-col cursor-pointer"
+    >
       <div className="w-full aspect-square rounded-md overflow-hidden">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
@@ -20,6 +22,7 @@ const VideoCard = ({
     </div>
   );
 };
+
 const Videos = () => {
   const performances = [
     { title: "Performance 1", date: "2026", image: "/performance1.png" },
@@ -41,19 +44,24 @@ const Videos = () => {
     { title: "Score 3", date: "2026", image: "/performance1.png" },
     { title: "Score 4", date: "2026", image: "/performance2.png" },
   ];
-
 const renderSection = (title: string, videos: typeof performances) => (
   <section className="flex flex-col gap-4">
     <h2 className="text-white font-bold text-xl">{title}</h2>
-    <div className="flex gap-6 overflow-x-auto scrollbar-hide py-2 px-2 md:px-0">
-      {videos.map((video, i) => (
-        <VideoCard key={i} {...video} />
-      ))}
-    </div>
+<div className="w-full overflow-x-auto py-4">
+  <div className="flex flex-nowrap space-x-6 px-6">
+    {videos.map((video, i) => (
+      <VideoCard key={i} {...video} />
+    ))}
+  </div>
+</div>
   </section>
 );
+
   return (
-    <div className="bg-[#1D2124] min-h-screen text-white px-4 pt-[160px] max-w-7xl mx-auto flex flex-col gap-12">
+    <div
+      className="bg-[#1D2124] text-white flex flex-col gap-12"
+      style={{ paddingTop: 300 }} // adjust to match your header height
+    >
       {renderSection("Performances", performances)}
       {renderSection("Music Videos", musicVideos)}
       {renderSection("Scores", scores)}

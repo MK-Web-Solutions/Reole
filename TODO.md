@@ -23,7 +23,7 @@
   }
 # Common
 - Backgrounds:
-  - Light: #D9D9D9
+  - Light: #E4E0E0
   - Dark: #1D1B20 / #1D2124
 - Text color: #565656
 - Font: Inter
@@ -134,3 +134,5 @@
 - [ ] Magazine-style layout
 - [ ] Grid / masonry display
 - [ ] Submitted text entries
+
+Newsletter sign-up
