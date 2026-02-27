@@ -1,4 +1,3 @@
-// Header.tsx
 import { Link, useLocation } from "react-router-dom";
 
 const tabs = [
@@ -17,32 +16,33 @@ const Header = () => {
       <Link to="/">
         <img
           src="/logo.png"
-          className="w-[185px] h-[201px] cursor-pointer mt-2"
+          className="w-[120px] sm:w-[185px] h-auto cursor-pointer mt-2"
           alt="logo"
         />
       </Link>
 
       {/* Tabs */}
-      <div className="flex gap-4 mt-6">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
         {tabs.map((tab, i) => (
           <Link
             key={i}
             to={tab.path}
             className={`
               flex justify-center items-center
-              w-[426px] h-[51px]
-              rounded-[6.45px]
-              text-[20px]
+              w-[100px] sm:w-[200px] md:w-[426px]   // responsive widths
+              h-[40px] sm:h-[51px]                  // responsive heights
+              rounded-md
+              text-[14px] sm:text-[16px] md:text-[20px]  // responsive font
               transition duration-300
               ${location.pathname === tab.path 
-                ? "text-gray-700 bg-gray-300"   // active tab text & bg
-                : "text-black hover:text-gray-500 hover:bg-gray-200"} // hover effect
+                ? "text-gray-700 bg-gray-300" 
+                : "text-white hover:text-gray-500 hover:bg-gray-700"}
             `}
           >
             {tab.name}
           </Link>
         ))}
-      </div> 
+      </div>
     </header>
   );
 };
