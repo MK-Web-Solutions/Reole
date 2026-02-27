@@ -43,79 +43,90 @@ const Footer = () => {
       </div>
 
       {/* Logo */}
-      <img src="/logo.png" alt="Logo" className="w-[175px] h-auto mb-6" />
+      <img src="/logo.png" alt="Logo" className="w-[175px] h-auto mb-8" />
 
-{/* Social Icons */}
-<div className="flex space-x-6 mb-12">
-  {/* TikTok */}
-  <a
-    href="https://www.tiktok.com/@yourusername"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-20 h-20 rounded-full bg-black flex items-center justify-center hover:bg-gray-700 transition"
-  >
-    <FontAwesomeIcon icon={faTiktok} className="w-10 h-10 text-white" />
-  </a>
 
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/yourusername"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-20 h-20 rounded-full bg-black flex items-center justify-center hover:bg-gray-700 transition"
-  >
-    <FontAwesomeIcon icon={faInstagram} className="w-10 h-10 text-white" />
-  </a>
-</div>
+
+      {/* Social Icons */}
+      <div className="flex justify-center items-center space-x-[100px] mb-[24px]">
+        <a
+          href="https://www.tiktok.com/@yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
+        >
+          <FontAwesomeIcon icon={faTiktok} className="w-full h-full text-white" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
+        >
+          <FontAwesomeIcon icon={faInstagram} className="w-full h-full text-white" />
+        </a>
+      </div>
 
       {/* Contact Form */}
-      <section className="w-full max-w-[333px] bg-white p-3 rounded-[10px] border border-[#D9D9D9] mb-8">
-        <h2 className="text-center font-bold text-sm mb-3">Contact Me</h2>
+      <section className="w-[333px] bg-white p-[12.825px] rounded-[15px] border border-[#D9D9D9] flex flex-col gap-[12.83px] mb-[32px]">
+        <h2 className="text-[18px] font-roboto font-normal leading-[28px] text-black text-center">
+          Contact Me
+        </h2>
 
         <form
           action="https://formspree.io/f/xldnekkn"
           method="POST"
-          className="flex flex-col gap-3"
+          className="flex flex-col gap-[12.83px]"
         >
-          <div className="flex flex-col gap-[4px]">
-            <label className="text-[9px] text-[#1E1E1E]">Name</label>
+          {/* Name Field */}
+          <div className="flex flex-col gap-[4.28px]">
+            <label className="text-[8.55px] text-[#1E1E1E] font-inter">
+              Name
+            </label>
             <input
               type="text"
               name="name"
-              required
-              className="w-full h-[22px] px-2 border border-[#D9D9D9] rounded-[4px] text-[9px]"
+              placeholder="Enter your name"
+              className="w-[307.35px] h-[21.83px] px-[8.55px] py-[6.4125px] border border-[#D9D9D9] rounded-[15px] text-[8.55px] text-[#B3B3B3]"
             />
           </div>
 
-          <div className="flex flex-col gap-[4px]">
-            <label className="text-[9px] text-[#1E1E1E]">Email</label>
+          {/* Email Field */}
+          <div className="flex flex-col gap-[4.28px]">
+            <label className="text-[8.55px] text-[#1E1E1E] font-inter">
+              Email
+            </label>
             <input
               type="email"
               name="email"
-              required
-              className="w-full h-[22px] px-2 border border-[#D9D9D9] rounded-[4px] text-[9px]"
+              placeholder="Enter your email"
+              className="w-[307.35px] h-[21.83px] px-[8.55px] py-[6.4125px] border border-[#D9D9D9] rounded-[15px] text-[8.55px] text-[#B3B3B3]"
             />
           </div>
 
-          <div className="flex flex-col gap-[4px]">
-            <label className="text-[9px] text-[#1E1E1E]">Message</label>
+          {/* Message Field */}
+          <div className="flex flex-col gap-[4.28px]">
+            <label className="text-[8.55px] text-[#1E1E1E] font-inter">
+              Message
+            </label>
             <textarea
               name="message"
+              placeholder="Enter your message"
               rows={3}
-              required
-              className="w-full h-[43px] px-2 border border-[#D9D9D9] rounded-[4px] text-[9px] resize-none"
+              className="w-[307.35px] h-[42.75px] px-[8.55px] py-[6.4125px] border border-[#D9D9D9] rounded-[15px] text-[8.55px] text-[#B3B3B3] resize-none"
             />
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#2C2C2C] text-white text-[9px] py-1 rounded-[4px] hover:bg-gray-800 transition mt-1"
+            className="w-[307.35px] h-[21.83px] bg-[#2F3539] border border-[#2C2C2C] rounded-[15px] text-[8.55px] text-[#F5F5F5] mt-[8.55px] hover:bg-[#2C2C2C] transition duration-200"
           >
             Send Message
           </button>
         </form>
       </section>
-
       {/* Marquee Animation */}
       <style>{`
         @keyframes marquee {

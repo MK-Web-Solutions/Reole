@@ -8,21 +8,23 @@ const VideoCard = ({
   image: string;
 }) => {
   return (
-    <div
-      className="flex-shrink-0 w-[220px] sm:w-[180px] md:w-[200px] lg:w-[220px] xl:w-[240px] 
-                 bg-[#1D2124] hover:bg-[rgba(255,255,255,0.08)] 
-                 transition-all duration-200 transform hover:scale-105 
-                 rounded-md p-2 flex flex-col cursor-pointer"
-    >
-      <div className="w-full aspect-square rounded-md overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
-      </div>
-      <div className="mt-2 text-white font-bold text-sm line-clamp-2">{title}</div>
-      <div className="text-[#B2B2B2] text-xs">{date}</div>
-    </div>
+<div className="min-w-[220px] w-[220px] h-[300px] rounded-[20px] overflow-hidden p-4 flex flex-col justify-between cursor-pointer transition duration-200 hover:bg-[#EBEBE6] hover:-translate-y-1">
+  
+  <div className="w-full h-[180px] overflow-hidden rounded-[15px]">
+    <img src={image} alt={title} className="w-full h-full object-cover" />
+  </div>
+
+  <div className="mt-4 flex flex-col items-center text-center">
+    <h3 className="font-bold text-base leading-tight line-clamp-2 text-white">
+      {title}
+    </h3>
+    <p className="text-sm mt-1 text-white">
+      {date}
+    </p>
+  </div>
+</div>
   );
 };
-
 const Videos = () => {
   const performances = [
     { title: "Performance 1", date: "2026", image: "/performance1.png" },
@@ -31,42 +33,30 @@ const Videos = () => {
     { title: "Performance 4", date: "2026", image: "/performance1.png" },
   ];
 
-  const musicVideos = [
-    { title: "Video 1", date: "2026", image: "/performance1.png" },
-    { title: "Video 2", date: "2026", image: "/performance2.png" },
-    { title: "Video 3", date: "2026", image: "/performance1.png" },
-    { title: "Video 4", date: "2026", image: "/performance2.png" },
-  ];
+const renderSection = (title: string, videos: typeof performances, isLast = false) => (
+<section className={`flex flex-col gap-6 px-4 sm:px-8 md:px-16 lg:px-24 ${isLast ? "mb-96 lg:mb-[20rem]" : ""}`}>    <h2 className="font-extrabold text-xl sm:text-2xl md:text-4xl lg:text-7xl text-white">
+      {title}
+    </h2>
 
-  const scores = [
-    { title: "Score 1", date: "2026", image: "/performance1.png" },
-    { title: "Score 2", date: "2026", image: "/performance2.png" },
-    { title: "Score 3", date: "2026", image: "/performance1.png" },
-    { title: "Score 4", date: "2026", image: "/performance2.png" },
-  ];
-const renderSection = (title: string, videos: typeof performances) => (
-  <section className="flex flex-col gap-4">
-    <h2 className="text-white font-bold text-xl">{title}</h2>
-<div className="w-full overflow-x-auto py-4">
-  <div className="flex flex-nowrap space-x-6 px-6">
-    {videos.map((video, i) => (
-      <VideoCard key={i} {...video} />
-    ))}
-  </div>
-</div>
+    <div className="overflow-x-auto w-full">
+      <div className="flex flex-nowrap py-4 space-x-[54px] justify-center min-w-full">
+        {videos.map((video, i) => (
+          <VideoCard key={i} {...video} />
+        ))}
+      </div>
+    </div>
   </section>
 );
 
-  return (
-    <div
-      className="bg-[#1D2124] text-white flex flex-col gap-12"
-      style={{ paddingTop: 300 }} // adjust to match your header height
-    >
-      {renderSection("Performances", performances)}
-      {renderSection("Music Videos", musicVideos)}
-      {renderSection("Scores", scores)}
-    </div>
-  );
+return (
+<div className="bg-[#D9D9D9] flex flex-col gap-12 pt-[300px] pb-64">
+  {renderSection("Performances", performances)}
+  {renderSection("Music Videos", performances)}
+  {renderSection("Scores", performances, true)}
+  <div className="h-64 lg:h-80"></div>
+</div>
+
+);
 };
 
 export default Videos;
