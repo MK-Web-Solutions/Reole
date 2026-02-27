@@ -27,17 +27,17 @@ const Header = () => {
           <Link
             key={i}
             to={tab.path}
-            className={`
-              flex justify-center items-center
-              w-[100px] sm:w-[200px] md:w-[426px]   // responsive widths
-              h-[40px] sm:h-[51px]                  // responsive heights
-              rounded-md
-              text-[14px] sm:text-[16px] md:text-[20px]  // responsive font
-              transition duration-300
-              ${location.pathname === tab.path 
-                ? "text-gray-700 bg-gray-300" 
-                : "text-white hover:text-gray-500 hover:bg-gray-700"}
-            `}
+className={`
+  flex justify-center items-center
+  w-[100px] sm:w-[200px] md:w-[426px]
+  h-[40px] sm:h-[51px]
+  rounded-md
+  text-[18px] sm:text-[22px] md:text-[28px]
+  transition duration-300
+  ${location.pathname === tab.path 
+    ? "text-gray-700 bg-gray-300" 
+    : "text-white hover:text-gray-500 hover:bg-gray-700"}
+`}
           >
             {tab.name}
           </Link>

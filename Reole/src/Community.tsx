@@ -44,7 +44,7 @@ const CommunityPage: React.FC = () => {
   type="text"
   value={input}
   onChange={(e) => setInput(e.target.value)}
-  placeholder="Something small, something weird, something yours"
+  placeholder="Something small,something weird,something yours"
   className="flex-1 w-[400px] h-[60px] px-[20px] py-[16px] text-[16px] text-[#757575] bg-white border border-[#D9D9D9] rounded-[8px] focus:outline-none"
 />
 <button
