@@ -41,9 +41,12 @@ const Footer = () => {
       </div>
 
       {/* Logo */}
-      <img src="/l.svg" alt="Logo" className="w-[450px] h-auto mb-8" />
-
-
+{/* Logo */}
+<img 
+  src="/l.svg" 
+  alt="Logo" 
+  className="w-full max-w-[450px] h-auto mb-8" 
+/>
 
       {/* Social Icons */}
       <div className="flex justify-center items-center space-x-[100px] mb-[24px]">

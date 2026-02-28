@@ -52,24 +52,24 @@ const CommunityPage: React.FC = () => {
       </section>
 
       <section className="bg-[#1D2124] w-full min-h-[1000px] relative z-0 py-16">
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-row gap-[10px] w-[600px] mx-auto items-center mb-16 pt-[50px] pb-[50px]"
-        >
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Something small, something weird, something yours"
-            className="flex-1 w-[400px] h-[60px] px-[20px] py-[16px] text-[16px] text-[#757575] bg-white border border-[#D9D9D9] rounded-[8px] focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="flex justify-center items-center w-[100px] h-[60px] bg-[#2C2C2C] border border-[#2C2C2C] rounded-[8px] text-[16px] text-[#F5F5F5] hover:bg-[#2F3539] transition duration-200"
-          >
-            Submit
-          </button>
-        </form>
+<form
+  onSubmit={handleSubmit}
+  className="flex flex-row gap-[10px] w-full max-w-[600px] mx-auto items-center mb-16 pt-[50px] pb-[50px] px-4"
+>
+  <input
+    type="text"
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+    placeholder="Something small, something weird, something yours"
+    className="flex-1 min-w-0 h-[60px] px-[20px] py-[16px] text-[16px] text-[#757575] bg-white border border-[#D9D9D9] rounded-[8px] focus:outline-none"
+  />
+  <button
+    type="submit"
+    className="flex justify-center items-center w-[100px] h-[60px] bg-[#2C2C2C] border border-[#2C2C2C] rounded-[8px] text-[16px] text-[#F5F5F5] hover:bg-[#2F3539] transition duration-200 shrink-0"
+  >
+    Submit
+  </button>
+</form>
 
         {status && (
           <p className={`text-center mb-6 font-medium transition-opacity duration-700 ${showStatus ? "opacity-100" : "opacity-0"}`} style={{ color: "#FFFFFF" }}>
