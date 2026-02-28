@@ -37,9 +37,9 @@ const CommunityPage: React.FC = () => {
   }, [showStatus]);
 
   // Map with explicit type
-  const boxes: (Box & { rotation: number })[] = boxesData.map(box => ({
+  const boxes: (Box & { rotation: number })[] = boxesData.map((box: Box) => ({
     ...box,
-    rotation: 15
+    rotation: 10
   }));
 
   return (
