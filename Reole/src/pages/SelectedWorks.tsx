@@ -28,12 +28,17 @@ const SelectedWorks = () => {
         />
       </div>
 
-      {/* Title and Description */}
-      <p style={{ color: 'white', fontSize: '18px', fontFamily: 'Inter' }}>{video.title}</p>
-      <p style={{ color: '#C6C6C6', fontSize: '10px', fontFamily: 'Inter' }}>{video.description}</p>
-
+{/* Title and Description */}
+<div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+  <p style={{ color: 'white', fontWeight: 'bold', fontSize: '25px', fontFamily: 'Inter', margin: 0 }}>
+    {video.title}
+  </p>
+  <p style={{ color: '#C6C6C6', fontSize: '15px', fontFamily: 'Inter', margin: 0 }}>
+    {video.description}
+  </p>
+</div>
       {/* Button */}
-      <div className="mt-2 self-end px-3 py-1 bg-[#1E2225] pb-[20px] rounded-[5px] flex items-center justify-center">
+      <div className="mt-2 self-end px-3 py-1 bg-[#1E2225] pt-[20px] pb-[30px] rounded-[5px] flex items-center justify-center">
         <Link
           to={video.link}
           style={{ color: 'white', transition: 'color 0.2s' }}

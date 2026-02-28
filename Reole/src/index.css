@@ -12,3 +12,6 @@ a {
 a:hover {
   color: #E1306C; /* pink / any accent color */
 }
+fontFamily {
+  inter: ['Inter', 'sans-serif'],
+} 

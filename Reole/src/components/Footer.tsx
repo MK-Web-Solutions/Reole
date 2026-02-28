@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faTiktok, faInstagram,faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { upcomingReleases } from '../data/releases';
 
 
@@ -10,22 +10,30 @@ const Footer = () => {
       {/* Scrolling Marquee */}
       <div className="w-full mb-12 ">
 {/* Row 1 */}
-<div className="w-full h-[220px] flex items-center overflow-hidden" style={{ backgroundColor: '#000000' }}>
-  <div className="flex animate-marquee whitespace-nowrap font-futura font-bold text-[30px] uppercase" style={{ color: '#FFFFFF' }}>
-    {upcomingReleases.concat(upcomingReleases).map((release, i) => (
-      <div key={i} className="inline-block px-12">
-        {`${release.title} COMING SOON . ${release.releaseDate}`}&nbsp;&nbsp;
+<div className="w-full h-[220px] flex items-center overflow-hidden" style={{ backgroundColor: '#000' }}>
+  <div className="flex animate-marquee whitespace-nowrap font-futura font-bold text-[30px] uppercase" style={{ color: '#FFF' }}>
+    {[...upcomingReleases, ...upcomingReleases, { title: "SPACER", type: "Other", releaseDate: "" }].map((release, i) => (
+      <div
+        key={i}
+        className="inline-block"
+        style={{ marginRight: release.title === "SPACER" ? "200px" : "80px" }} // big gap at end
+      >
+        {release.title !== "SPACER" ? `${release.title} COMING SOON • ${release.releaseDate}` : ""}
       </div>
     ))}
   </div>
 </div>
 
 {/* Row 2 */}
-<div className="w-full h-[220px] flex items-center overflow-hidden" style={{ backgroundColor: '#000000' }}>
-  <div className="flex animate-marquee-reverse whitespace-nowrap font-futura font-bold text-[30px] uppercase" style={{ color: '#FFFFFF' }}>
-    {upcomingReleases.concat(upcomingReleases).map((release, i) => (
-      <div key={i} className="inline-block px-12">
-        {`${release.title} COMING SOON . ${release.releaseDate}`}&nbsp;&nbsp;
+<div className="w-full h-[220px] flex items-center overflow-hidden" style={{ backgroundColor: '#000' }}>
+  <div className="flex animate-marquee-reverse whitespace-nowrap font-futura font-bold text-[30px] uppercase" style={{ color: '#FFF' }}>
+    {[...upcomingReleases, ...upcomingReleases, { title: "SPACER", type: "Other", releaseDate: "" }].map((release, i) => (
+      <div
+        key={i}
+        className="inline-block"
+        style={{ marginRight: release.title === "SPACER" ? "200px" : "80px" }} // same big gap
+      >
+        {release.title !== "SPACER" ? `${release.title} COMING SOON • ${release.releaseDate}` : ""}
       </div>
     ))}
   </div>
@@ -33,7 +41,7 @@ const Footer = () => {
       </div>
 
       {/* Logo */}
-      <img src="/logo.png" alt="Logo" className="w-[175px] h-auto mb-8" />
+      <img src="/l.svg" alt="Logo" className="w-[450px] h-auto mb-8" />
 
 
 
@@ -55,6 +63,15 @@ const Footer = () => {
           className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
         >
           <FontAwesomeIcon icon={faInstagram} className="w-full h-full text-white" />
+        </a>
+
+        <a
+          href="https://www.youtube.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
+        >
+          <FontAwesomeIcon icon={faYoutube} className="w-full h-full text-white" />
         </a>
       </div>
 
@@ -119,25 +136,25 @@ const Footer = () => {
       </section>
       {/* Marquee Animation */}
       <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* full width of duplicated content */
+}
 
-        @keyframes marquee-reverse {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
+@keyframes marquee-reverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
 
-        .animate-marquee {
-          display: inline-flex;
-          animation: marquee 20s linear infinite;
-        }
+.animate-marquee {
+  display: flex;
+  animation: marquee 30s linear infinite; /* adjust duration for speed */
+}
 
-        .animate-marquee-reverse {
-          display: inline-flex;
-          animation: marquee-reverse 20s linear infinite;
-        }
+.animate-marquee-reverse {
+  display: flex;
+  animation: marquee-reverse 30s linear infinite;
+}
       `}</style>
 <p>@ 2026 MK Web-Solutions. All rights reserved.</p>
     </footer>

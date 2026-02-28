@@ -15,8 +15,8 @@ const Header = () => {
       {/* Logo */}
       <Link to="/">
         <img
-          src="/logo.png"
-          className="w-[120px] sm:w-[185px] h-auto cursor-pointer mt-2"
+          src="/logo.svg"
+          className="w-[150px] sm:w-[300px] h-auto cursor-pointer mt-2"
           alt="logo"
         />
       </Link>
