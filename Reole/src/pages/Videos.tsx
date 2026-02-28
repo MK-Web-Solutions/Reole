@@ -4,12 +4,10 @@ import { videosData } from "../data/videosData";
 
 const VideoCard = ({
   title,
-  date,
   youtubeId,
   onOpen,
 }: {
   title: string;
-  date: string;
   youtubeId: string;
   onOpen: () => void;
 }) => {
@@ -27,7 +25,6 @@ const VideoCard = ({
         <h3 className="font-bold text-base leading-tight line-clamp-2 text-white">
           {title}
         </h3>
-        <p className="text-sm mt-1 text-white">{date}</p>
       </div>
     </div>
   );
@@ -72,7 +69,7 @@ const Videos = () => {
             <VideoCard
               key={video.title}
               title={video.title}
-              date={video.date}
+
               youtubeId={video.youtubeId}
               onOpen={() => setOpenCard(video.title)}
             />

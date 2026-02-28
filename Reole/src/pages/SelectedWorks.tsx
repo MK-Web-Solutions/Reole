@@ -42,8 +42,13 @@ const SelectedWorks = () => {
         <Link
           to={video.link}
           style={{ color: 'white', transition: 'color 0.2s' }}
-          onMouseEnter={e => e.target.style.color = '#E1306C'}
-          onMouseLeave={e => e.target.style.color = 'white'}
+onMouseEnter={(e) => {
+  (e.target as HTMLElement).style.color = '#E1306C';
+}}
+
+onMouseLeave={(e) => {
+  (e.target as HTMLElement).style.color = 'white';
+}}
           className="text-[12px] font-medium font-inter"
         >
           {video.buttonText}
