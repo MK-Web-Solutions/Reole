@@ -63,18 +63,23 @@ const Videos = () => {
           {title}
         </h1>
       </div>
-      <div className="overflow-x-auto w-full">
-        <div className="flex flex-nowrap py-4 space-x-[54px] justify-center min-w-full">
-          {videos.map((video: Video) => (
-            <VideoCard
-              key={video.id}
-              title={video.title}
-              youtubeId={video.youtubeId}
-              onOpen={() => setOpenCard(video.title)}
-            />
-          ))}
-        </div>
+<div className="overflow-x-auto w-full scroll-smooth">
+  <div className="flex gap-[54px] snap-x snap-mandatory px-4">
+    {videos.map((video: Video, index: number) => (
+      <div
+        key={video.id}
+        className={`flex-shrink-0 snap-center ${
+          index === 0 ? 'ml-auto' : ''} ${index === videos.length - 1 ? 'mr-auto' : ''}`}
+      >
+        <VideoCard
+          title={video.title}
+          youtubeId={video.youtubeId}
+          onOpen={() => setOpenCard(video.title)}
+        />
       </div>
+    ))}
+  </div>
+</div>
     </section>
   );
 
