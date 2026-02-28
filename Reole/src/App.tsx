@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AppRoutes from "./router";
 import ScrollToTop from "./components/ScrollToTop";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   return (
     <BrowserRouter>
