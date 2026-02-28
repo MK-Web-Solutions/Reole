@@ -6,8 +6,7 @@ import AppRoutes from "./router";
 const App = () => {
   return (
     <BrowserRouter>
-<div className="w-full min-h-screen">
-  <Header />
+<div className="w-full min-h-screen overflow-x-hidden">  <Header />
 
 <main className="px-6 md:px-12 pb-24 md:pb-40 lg:pb-64">
   <AppRoutes />

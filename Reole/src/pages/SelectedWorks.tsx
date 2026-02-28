@@ -14,8 +14,7 @@ const SelectedWorks = () => {
 {/* Videos Section */}
 <div className="flex flex-col items-center gap-12 w-full">
   {videosData.slice(0, 2).map(video => (
-    <div key={video.id} className="flex flex-col w-[532px] gap-2">
-
+<div key={video.id} className="flex flex-col w-full max-w-[532px] gap-2">
       {/* YouTube Video */}
       <div className="w-full h-[296px] rounded-[15px] overflow-hidden">
         <iframe
