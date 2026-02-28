@@ -15,7 +15,7 @@ const VideoCard = ({
 
   return (
     <div
-      className="min-w-[220px] w-[220px] h-[300px] rounded-[20px] overflow-hidden p-4 flex flex-col justify-between cursor-pointer transition duration-200 hover:bg-[#EBEBE6] hover:-translate-y-1"
+      className="min-w-[220px] w-[220px] h-[300px] rounded-[20px] overflow-hidden p-4 flex flex-col justify-between cursor-pointer transition duration-200 hover:bg-[#E9E6E6] hover:-translate-y-1"
       onClick={onOpen}
     >
       <div className="w-full h-[180px] overflow-hidden rounded-[15px]">
@@ -84,7 +84,7 @@ const Videos = () => {
   );
 
   return (
-    <div className="bg-[#D9D9D9] flex flex-col gap-12 pt-[300px] pb-64">
+    <div className="bg-[#E4E0E0] flex flex-col gap-12 pt-[300px] pb-64">
       {renderSection(
         "Live Performances",
         videosData.filter((video: Video) => video.type === "Performance")
@@ -105,7 +105,7 @@ const Videos = () => {
           >
             <motion.div
               ref={modalRef}
-              className="bg-[#EBEBE9] rounded-[20px] overflow-hidden shadow-2xl cursor-auto flex flex-col"
+              className="bg-[#E6E0E0] rounded-[20px] overflow-hidden shadow-2xl cursor-auto flex flex-col"
               style={{
                 position: "fixed",
                 top: "50%",

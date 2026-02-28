@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
   />
 </section>
       {/* Biography Section */}
-      <section className="relative w-full bg-[#EBEBE6] py-14 flex flex-col items-center">
+      <section className="relative w-full bg-[#E4E0E0] py-14 flex flex-col items-center">
         <h2 className="font-semibold text-[60px] leading-[73px] capitalize text-black mb-8">
           Biography
         </h2>

@@ -44,7 +44,7 @@ const CommunityPage: React.FC = () => {
 
   return (
     <div className="min-h-screen relative">
-      <section className="bg-[#EBEBE6] pt-[300px] pb-[100px] text-center relative z-10">
+      <section className="bg-[#E4E0E0] pt-[300px] pb-[100px] text-center relative z-10">
         <h1 className="font-bold text-3xl md:text-4xl mb-4">A place for everything</h1>
         <p className="text-gray-700 max-w-xl mx-auto leading-relaxed text-sm md:text-base mb-8">
           Leave a word, a sentence, a story, or just a feeling. Some might inspire music. Most just sit here to be shared together.
