@@ -51,7 +51,7 @@ const Footer = () => {
       {/* Social Icons */}
       <div className="flex justify-center items-center space-x-[100px] mb-[24px]">
         <a
-          href="https://www.tiktok.com/@yourusername"
+          href="https://www.tiktok.com/@reole__"
           target="_blank"
           rel="noopener noreferrer"
           className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
@@ -60,7 +60,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.instagram.com/yourusername"
+          href="https://www.instagram.com/_reole"
           target="_blank"
           rel="noopener noreferrer"
           className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
@@ -69,7 +69,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.youtube.com/yourusername"
+          href="https://www.youtube.com/@may_elshams"
           target="_blank"
           rel="noopener noreferrer"
           className="w-[22px] h-[23px] bg-black flex items-center justify-center rounded"
