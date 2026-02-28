@@ -75,7 +75,7 @@ const Footer = () => {
         </h2>
 
         <form
-          action="https://formspree.io/f/xldnekkn"
+          action="https://formspree.io/f/xgolqpvg"
           method="POST"
           className="flex flex-col gap-[12.83px]"
         >

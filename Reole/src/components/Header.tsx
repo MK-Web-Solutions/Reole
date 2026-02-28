@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 
 const tabs = [
-  { name: "Songs", path: "/songs" },
-  { name: "Gallery", path: "/gallery" },
+  //{ name: "Songs", path: "/songs" },
+  //{ name: "Gallery", path: "/gallery" },
   { name: "Videos", path: "/videos" },
   { name: "Community", path: "/community" },
 ];

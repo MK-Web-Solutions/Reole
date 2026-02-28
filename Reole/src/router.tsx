@@ -1,10 +1,10 @@
 // router.tsx
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import GalleryPage from './Gallery';
-import VideosPage from './Videos';
-import CommunityPage from './Community';
-import SongPage from './Songs';
+import HomePage from './pages/HomePage';
+import GalleryPage from './pages/Gallery';
+import VideosPage from './pages/Videos';
+import CommunityPage from './pages/Community';
+import SongPage from './pages/Songs';
 
 const AppRoutes = () => (
   <Routes>
