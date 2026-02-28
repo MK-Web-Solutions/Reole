@@ -14,20 +14,21 @@ const HomePage: React.FC = () => {
     alt="hero"
   />
 
-  {/* Overlay Text */}
-  <h1
-    className="
-      absolute text-white font-light tracking-[0.1em] capitalize z-10 drop-shadow-md
-      text-[40px] sm:text-[32px] xs:text-[28px] 
-      leading-[48px] sm:leading-[40px] xs:leading-[34px]
-      w-[170px] sm:w-[130px] xs:w-[98px] h-[193px] max-w-[90vw] xs:max-w-[80vw]
-      left-[calc(50%-85px+566px)] sm:left-[calc(50%-65px+400px)] xs:left-[calc(50%-49px+156px)]
-      top-[70%] sm:top-[50%] xs:top-[370px]
-      font-inter
-    "
-  >
-    Music that shapes story
-  </h1>
+{/* Overlay Text */}
+<h1
+  className="
+    absolute text-white font-light tracking-[0.1em] capitalize z-10 drop-shadow-md
+    text-[40px] sm:text-[32px] xs:text-[28px]
+    leading-[48px] sm:leading-[40px] xs:leading-[34px]
+    w-[170px] sm:w-[130px] xs:w-[98px] h-[193px] 
+    max-w-[90vw] xs:max-w-[80vw]
+    left-[calc(50%-85px+566px)] sm:left-[calc(50%-65px+350px)] xs:left-[calc(50%-49px+100px)]
+    top-[70%] sm:top-[50%] xs:top-[370px]
+    font-inter
+  "
+>
+  Music that shapes story
+</h1>
 
   {/* Big Reolenm Image */}
   <img
