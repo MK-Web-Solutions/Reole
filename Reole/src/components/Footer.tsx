@@ -1,17 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { upcomingReleases } from '../data/releases';
 
-type Release = {
-  title: string;
-  type: "Single" | "EP" | "Album" | "Film" | "Live" | "Other";
-  releaseDate: string;
-};
-
-const upcomingReleases: Release[] = [
-  { title: "Midnight Echoes", type: "EP", releaseDate: "March 2026" },
-  { title: "Live Studio Session", type: "Film", releaseDate: "April 2026" },
-  { title: "Neon Collapse", type: "Single", releaseDate: "May 2026" },
-];
 
 const Footer = () => {
   return (
@@ -149,7 +139,7 @@ const Footer = () => {
           animation: marquee-reverse 20s linear infinite;
         }
       `}</style>
-
+<p>@ 2026 MK Web-Solutions. All rights reserved.</p>
     </footer>
   );
 };

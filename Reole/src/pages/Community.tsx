@@ -38,14 +38,14 @@ const CommunityPage: React.FC = () => {
       <section className="bg-[#1D2124] w-full min-h-[1000px] relative z-0 py-16">
         {/* Input form */}
         <form
-          action="https://formspree.io/f/ID"
+          action="https://formspree.io/f/mjgezpgo"
           method="POST"
           className="flex flex-row gap-[10px] w-[600px] mx-auto items-center mb-16 pt-[50px] pb-[50px]"
         >
           <input
             type="text"
             name="message"
-            placeholder="Something small, something weird, something yours"
+            placeholder="Something small,something weird,something yours"
             className="flex-1 w-[400px] h-[60px] px-[20px] py-[16px] text-[16px] text-[#757575] bg-white border border-[#D9D9D9] rounded-[8px] focus:outline-none"
           />
           <button
@@ -58,9 +58,9 @@ const CommunityPage: React.FC = () => {
 
         {/* Collage of white boxes */}
 <div
-  className="grid grid-rows-3 grid-flow-col overflow-x-auto mx-auto mt-24 px-10"
+  className="grid grid-rows-3 grid-flow-col overflow-x-auto mx-auto mt-24 px-10 "
   style={{
-    gap: "20px 30px",
+    gap: "20px 30px", paddingBottom: "100px", paddingTop: "50px",
   }}
 >
   {boxes.map((box) => (
@@ -72,7 +72,7 @@ const CommunityPage: React.FC = () => {
         className="w-[250px] h-[350px] flex items-center justify-center text-black font-medium text-center px-4 
         bg-white shadow-lg 
         transition-all duration-300 ease-out
-        hover:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:bg-[#F7F7F2]"
+        hover:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:bg-[#F7F7F2] rounded-[15px]"
         style={{
           transform: `rotate(${box.rotation}deg)`,
           backgroundColor: "white",
