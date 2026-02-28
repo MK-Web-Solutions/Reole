@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { videosData } from "../data/videosData";
+import { type Video, videosData } from "../data/videosData";
 
 const VideoCard = ({
   title,
@@ -32,7 +32,7 @@ const VideoCard = ({
 
 const Videos = () => {
   const [openCard, setOpenCard] = useState<string | null>(null);
-  const currentVideo = videosData.find((v) => v.title === openCard);
+  const currentVideo = videosData.find((v: Video) => v.title === openCard);
 
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -56,7 +56,7 @@ const Videos = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [modalRef]);
 
-  const renderSection = (title: string, videos: typeof videosData) => (
+  const renderSection = (title: string, videos: Video[]) => (
     <section className="flex flex-col gap-6 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="w-full flex">
         <h1 className="font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-8xl text-white my-6 text-left lg:text-center mx-auto lg:max-w-4xl">
@@ -65,11 +65,10 @@ const Videos = () => {
       </div>
       <div className="overflow-x-auto w-full">
         <div className="flex flex-nowrap py-4 space-x-[54px] justify-center min-w-full">
-          {videos.map((video) => (
+          {videos.map((video: Video) => (
             <VideoCard
-              key={video.title}
+              key={video.id}
               title={video.title}
-
               youtubeId={video.youtubeId}
               onOpen={() => setOpenCard(video.title)}
             />
@@ -83,9 +82,12 @@ const Videos = () => {
     <div className="bg-[#D9D9D9] flex flex-col gap-12 pt-[300px] pb-64">
       {renderSection(
         "Live Performances",
-        videosData.filter((video) => video.type === "Performance")
+        videosData.filter((video: Video) => video.type === "Performance")
       )}
-      {renderSection("Scores", videosData.filter((video) => video.type === "Score"))}
+      {renderSection(
+        "Scores",
+        videosData.filter((video: Video) => video.type === "Score")
+      )}
 
       {/* Fullscreen modal */}
       <AnimatePresence>
@@ -97,7 +99,7 @@ const Videos = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              ref={modalRef} // <-- ref here
+              ref={modalRef}
               className="bg-[#EBEBE9] rounded-[20px] overflow-hidden shadow-2xl cursor-auto flex flex-col"
               style={{
                 position: "fixed",
@@ -121,9 +123,9 @@ const Videos = () => {
               </div>
 
               {/* Text */}
-              <div className="p-6 text-white flex-1 overflow-auto p">
+              <div className="p-6 text-white flex-1 overflow-auto">
                 <h2 className="text-3xl font-bold mb-2">{currentVideo.title}</h2>
-                <p>{currentVideo.details || "Full description here..."}</p>
+                <p>{currentVideo.details}</p>
               </div>
             </motion.div>
           </motion.div>

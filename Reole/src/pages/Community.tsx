@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { boxesData } from "../data/boxes";
-
-interface Box {
-  id: number;
-  content: string;
-  rotation: number;
-}
+import { type Box, boxesData } from "../data/boxes"; // note 'type Box'
 
 const CommunityPage: React.FC = () => {
   const [input, setInput] = useState("");
-  const [status, setStatus] = useState(""); // confirmation text
-  const [showStatus, setShowStatus] = useState(false); // controls fade
+  const [status, setStatus] = useState("");
+  const [showStatus, setShowStatus] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!input.trim()) {
       setStatus("Please enter something before submitting.");
       setShowStatus(true);
@@ -28,33 +21,23 @@ const CommunityPage: React.FC = () => {
         body: JSON.stringify({ message: input }),
       });
 
-      if (response.ok) {
-        setStatus("Thanks! Your message has been sent.");
-        setInput("");
-      } else {
-        setStatus("Oops! Something went wrong. Please try again.");
-      }
+      setStatus(response.ok ? "Thanks! Your message has been sent." : "Oops! Something went wrong.");
+      if (response.ok) setInput("");
       setShowStatus(true);
-    } catch (err) {
-      console.error(err);
+    } catch {
       setStatus("Error sending message. Please try again later.");
       setShowStatus(true);
     }
   };
 
-  // Automatically fade out the status message
   useEffect(() => {
     if (!showStatus) return;
-
-    const timer = setTimeout(() => {
-      setShowStatus(false);
-    }, 3000); // fade out after 3 seconds
-
+    const timer = setTimeout(() => setShowStatus(false), 3000);
     return () => clearTimeout(timer);
   }, [showStatus]);
 
-  // Add rotation to each imported box
-  const boxes: Box[] = boxesData.map(box => ({
+  // Map with explicit type
+  const boxes: (Box & { rotation: number })[] = boxesData.map(box => ({
     ...box,
     rotation: 15
   }));
@@ -75,10 +58,9 @@ const CommunityPage: React.FC = () => {
         >
           <input
             type="text"
-            name="message"
-            placeholder="Something small,something weird,something yours"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            placeholder="Something small, something weird, something yours"
             className="flex-1 w-[400px] h-[60px] px-[20px] py-[16px] text-[16px] text-[#757575] bg-white border border-[#D9D9D9] rounded-[8px] focus:outline-none"
           />
           <button
@@ -89,29 +71,20 @@ const CommunityPage: React.FC = () => {
           </button>
         </form>
 
-{/* Fading confirmation message */}
-{status && (
-  <p
-    className={`text-center mb-6 font-medium transition-opacity duration-700 ${
-      showStatus ? "opacity-100" : "opacity-0"
-    }`}
-    style={{ color: "#FFFFFF" }} // force white text
-  >
-    {status}
-  </p>
-)}
+        {status && (
+          <p className={`text-center mb-6 font-medium transition-opacity duration-700 ${showStatus ? "opacity-100" : "opacity-0"}`} style={{ color: "#FFFFFF" }}>
+            {status}
+          </p>
+        )}
 
-        <div
-          className="grid grid-rows-3 grid-flow-col overflow-x-auto mx-auto mt-24 px-10"
-          style={{ gap: "20px 30px", paddingBottom: "100px", paddingTop: "50px" }}
-        >
+        <div className="grid grid-rows-3 grid-flow-col overflow-x-auto mx-auto mt-24 px-10" style={{ gap: "20px 30px", paddingBottom: "100px", paddingTop: "50px" }}>
           {boxes.map((box) => (
             <div key={box.id} className="w-[250px] h-[365px] flex items-center justify-center">
               <div
                 className="w-[250px] h-[350px] flex items-center justify-center text-black font-medium text-center px-4 
-                bg-white shadow-lg 
-                transition-all duration-300 ease-out
-                hover:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:bg-[#F7F7F2] rounded-[15px]"
+                           bg-white shadow-lg 
+                           transition-all duration-300 ease-out
+                           hover:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:bg-[#F7F7F2] rounded-[15px]"
                 style={{ transform: `rotate(${box.rotation}deg)`, backgroundColor: "white" }}
               >
                 {box.content}
