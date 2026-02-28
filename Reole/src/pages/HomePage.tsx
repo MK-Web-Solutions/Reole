@@ -1,9 +1,10 @@
 import SelectedWorks from './SelectedWorks';
-
+import PageWrapper from '../components/PageWrapper';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="w-full relative">
+    <PageWrapper>
+      <div className="w-full relative">
 
       {/* Hero Section */}
 <section className="relative w-full h-[150vh] sm:h-[120vh] xs:h-[100vh]">
@@ -68,7 +69,8 @@ const HomePage: React.FC = () => {
       </section>
 
       <SelectedWorks />
-    </div>
+      </div>
+    </PageWrapper>
   );
 };
 

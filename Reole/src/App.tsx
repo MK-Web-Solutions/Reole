@@ -6,17 +6,20 @@ import AppRoutes from "./router";
 const App = () => {
   return (
     <BrowserRouter>
+      {/* Full-width background */}
       <div className="min-h-screen w-full overflow-x-hidden bg-gray-900 text-white">
-        {/* Header */}
+
+        {/* Header (full width) */}
         <Header />
 
-        {/* Main content with padding so text isn't at the edges */}
+        {/* Main content with horizontal padding only */}
         <main className="px-4 md:px-12 pb-24 md:pb-40 lg:pb-64">
           <AppRoutes />
         </main>
 
-        {/* Footer */}
+        {/* Footer (full width) */}
         <Footer />
+
       </div>
     </BrowserRouter>
   );
