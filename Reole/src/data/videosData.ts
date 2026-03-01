@@ -66,7 +66,7 @@ export const videosData: Video[] = [
     type: "Performance",
     description: "Live Performance",
     details: "Solo acoustic performance covering popular songs with a unique twist. Focuses on expressive phrasing, fingerstyle techniques, and dynamic storytelling through music.",
-    youtubeId: "ypL-4Ob4GMA",
+    youtubeId: "4AugU1DTK6M",
     link: "/videos",
     buttonText: "View All Performances"
   }
