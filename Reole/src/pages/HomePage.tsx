@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
     font-inter
   "
 >
-  Music that shapes story
+  When words fail, music speaks
 </h1>
 
   {/* Big Reolenm Image */}
