@@ -5,6 +5,6 @@ export type Release = {
 };
 
 export const upcomingReleases: Release[] = [
-  { title: "  Cyclamen EP  ", type: "EP", releaseDate: "March 2026" },
+  { title: "  Cyclamen EP  ", type: "EP", releaseDate: "April 2026" },
   { title: "  Music's Everywhere vol.1  ", type: "Film", releaseDate: "April 2026" },
 ];
