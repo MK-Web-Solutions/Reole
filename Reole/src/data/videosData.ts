@@ -69,5 +69,15 @@ export const videosData: Video[] = [
     youtubeId: "4AugU1DTK6M",
     link: "/videos",
     buttonText: "View All Performances"
+  },
+  {
+    id: 7,
+    title: "Can a pen make a song?",
+    type: "Series",
+    description: "Experimental Music Series",
+    details: "Music's Everywhere Vol.1: Exploring the musicality of everyday objects. This series delves into the sounds produced by common items, showcasing creativity and innovation in music composition.",
+    youtubeId: "-wQAPWxhs7M",
+    link: "/videos",
+    buttonText: "View All Performances"
   }
 ];

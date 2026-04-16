@@ -93,6 +93,10 @@ const Videos = () => {
         "Scores",
         videosData.filter((video: Video) => video.type === "Score")
       )}
+      {renderSection(
+        "Experimental Series",
+        videosData.filter((video: Video) => video.type === "Series")
+      )}
 
       {/* Fullscreen modal */}
       <AnimatePresence>
