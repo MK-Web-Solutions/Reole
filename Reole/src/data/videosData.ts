@@ -89,5 +89,15 @@ export const videosData: Video[] = [
   youtubeId: "-Noufq8898Q",
   link: "/videos",
   buttonText: "View All Performances"
+},
+{
+  id: 9,
+  title: "Can a star make a song?",
+  type: "Series",
+  description: "Experimental Music Series",
+  details: "Music's Everywhere Vol.2: Exploring the musicality of celestial bodies. This series investigates the sounds and rhythms inspired by stars and cosmic phenomena, blending science and music in innovative ways.",
+  youtubeId: "VplSomSSiGA",
+  link: "/videos",
+  buttonText: "View All Performances"
 }
 ];
