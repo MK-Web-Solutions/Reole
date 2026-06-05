@@ -79,5 +79,15 @@ export const videosData: Video[] = [
     youtubeId: "-wQAPWxhs7M",
     link: "/videos",
     buttonText: "View All Performances"
-  }
+  },
+{
+  id: 8,
+  title: "ICMP London",
+  type: "Performance",
+  description: "Live Performance",
+  details: "Live performance of original songs at ICMP London Queens Park, featuring songs from my debut EP.",
+  youtubeId: "-Noufq8898Q",
+  link: "/videos",
+  buttonText: "View All Performances"
+}
 ];
