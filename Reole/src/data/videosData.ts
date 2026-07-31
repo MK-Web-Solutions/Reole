@@ -99,5 +99,15 @@ export const videosData: Video[] = [
   youtubeId: "VplSomSSiGA",
   link: "/videos",
   buttonText: "View All Performances"
-}
+},
+  {
+    id: 10,
+    title: "The full moon",
+    type: "Performance",
+    description: "Live Performance",
+    details: "Live performance at the full moon Bristol.",
+    youtubeId: "39mdgL_YF8I",
+    link: "/videos",
+    buttonText: "View All Performances"
+  }
 ];
